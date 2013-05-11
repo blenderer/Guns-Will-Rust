@@ -1,4 +1,4 @@
-require 'libraries/middleclass'
+require 'libraries/libraries'
 require '/classes/classes'
 
 function love.load()
