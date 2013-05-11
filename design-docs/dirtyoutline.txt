@@ -1,0 +1,16 @@
+Game
+	-Players
+	-Entities
+		-Avatars
+			-Equipment
+				-Held Weapon
+				-Sheathed Weapon
+				-Helmet
+				-Boots
+				-Amulet
+		-Minions
+		-Items
+		-Spells
+			-Missiles
+		-Terrain
+	-Map
