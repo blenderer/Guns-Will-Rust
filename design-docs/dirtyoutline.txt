@@ -3,8 +3,8 @@ Game
 	-Entities
 		-Avatars
 			-Equipment
-				-Held Weapon
-				-Sheathed Weapon
+				-Held Weapon 1hx2 or 2h (Can be spellbooks)
+				-Sheathed Weapon 1hx2 or 2h
 				-Helmet
 				-Boots
 				-Amulet
