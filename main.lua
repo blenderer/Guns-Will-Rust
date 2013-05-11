@@ -2,7 +2,7 @@ require 'libraries/libraries'
 require 'classes/classes'
 
 function love.load()
-	
+	cam = Camera(0, 0)
 end
 
 function love.update(deltatime)
@@ -11,7 +11,12 @@ end
 
 
 function love.draw()
-	love.graphics.print( "hello world", 0, 0)
+	--[[
+	cam:attach()
+	--draw world
+	cam:detach()
+	--draw UI
+	]]--
 end
 
 function love.keypressed(key, u)

@@ -1,3 +1,5 @@
+This game is still in design phase
+
 Guns Will Rust is a Top-Down, Shoot-em-up, historical dungeon-crawler.
 
 Players will enter a magical and dangerous dungeon that has existed since the beginning of man.

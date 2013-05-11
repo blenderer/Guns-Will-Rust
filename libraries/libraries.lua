@@ -1,1 +1,2 @@
-require '/libraries/middleclass'
+require 'libraries/middleclass'
+Camera = require "libraries/hump.camera"
