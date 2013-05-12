@@ -26,3 +26,7 @@ function Entity:move(xpos, ypos)
 	self.x = xpos
 	self.y = ypos
 end
+
+function Entity:draw()
+	love.graphics.circle("fill", 300, 300, 50)
+end
