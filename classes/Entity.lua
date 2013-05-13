@@ -1,17 +1,25 @@
 Entity = class('Entity')
 
-function Entity:initialize(xpos, ypos)
+function Entity:initialize(xpos, ypos, name)
+	
 	self.x = xpos
 	self.y = ypos
 	self.hp = 1
+	
+	self.name = name
+	
+end
+
+function Entity:getName()
+	return self.name
 end
 
 function Entity:getX()
 	return self.x
 end
 
-function Entity:getX()
-	return self.x
+function Entity:getY()
+	return self.y
 end
 
 function Entity:getHp()
@@ -28,5 +36,5 @@ function Entity:move(xpos, ypos)
 end
 
 function Entity:draw()
-	love.graphics.circle("fill", 300, 300, 50)
+	love.graphics.circle("fill", self.x, self.y, 20)
 end

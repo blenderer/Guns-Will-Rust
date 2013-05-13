@@ -3,15 +3,11 @@ require 'classes/classes'
 
 function love.load()
 	--cam = Camera(0, 0)
-	test_guy = Entity:new(400, 300)
+
+	test_map = Map:new("Test")
 	
-	player = {}
-	avatar = {}
+	test_map:spawn(Entity:new(400, 300, "Bad Guy"))
 	
-	player[1] = Player:new()
-	avatas[1] = Avatar:new(200,200, "Blenderer")
-	
-	player[1]:control(avatar[1])
 end
 
 function love.update(deltatime)
@@ -20,7 +16,7 @@ end
 
 
 function love.draw()
-	test_guy:draw()
+	test_map:draw()
 	--[[
 	cam:attach()
 	--draw world
@@ -34,4 +30,8 @@ function love.keypressed(key, u)
 	if key == "rctrl" then
 		debug.debug()
 	end
+end
+
+function love.joystickpressed( joystick, button )
+	print(joystick, button)
 end
