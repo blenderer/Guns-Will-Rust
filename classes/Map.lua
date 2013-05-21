@@ -5,8 +5,9 @@ function Map:initialize(datafile)
 	self.entities = {}
 end
 
-function Map:spawn(entity)
+function Map:spawn(entity, x, y)
 	table.insert(self.entities, entity)
+	entity:move(x, y)
 end
 
 function Map:draw()

@@ -1,6 +1,6 @@
 Entity = class('Entity')
 
-function Entity:initialize(xpos, ypos, name)
+function Entity:initialize(name, xpos, ypos)
 	
 	self.x = xpos
 	self.y = ypos
@@ -36,5 +36,8 @@ function Entity:move(xpos, ypos)
 end
 
 function Entity:draw()
-	love.graphics.circle("fill", self.x, self.y, 20)
+	love.graphics.setColor(255, 0, 0)
+	love.graphics.circle("fill", self.x, self.y, 10)
+	love.graphics.setColor(255, 255, 255)
+	love.graphics.print(self.name, self.x - 30, self.y - 5)
 end

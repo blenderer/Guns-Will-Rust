@@ -2,16 +2,28 @@ require 'libraries/libraries'
 require 'classes/classes'
 
 function love.load()
+
 	--cam = Camera(0, 0)
 
 	test_map = Map:new("Test")
 	
-	test_map:spawn(Entity:new(400, 300, "Bad Guy"))
+	enemy1 = Entity:new("Bad Guy", 200, 200)
+	
+	players = {}
+	
+	table.insert(players, Avatar:new("Blenderer", 0, 0, 1))
+	
+	test_map:spawn(enemy1, 200, 200)
+	
+	test_map:spawn(players[1], 400, 300)
 	
 end
 
 function love.update(deltatime)
-	
+
+	if love.joystick.getHat( 1, 1 ) ~= "c" then
+		print(love.joystick.getHat( 1, 1 ))
+	end
 end
 
 
@@ -33,5 +45,5 @@ function love.keypressed(key, u)
 end
 
 function love.joystickpressed( joystick, button )
-	print(joystick, button)
+
 end
