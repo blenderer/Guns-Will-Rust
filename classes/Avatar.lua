@@ -1,9 +1,11 @@
 Avatar = class('Avatar', Entity)
 
-function Avatar:initialize(name, xpos, ypos, controller)
-	Entity.initialize(self, name, xpos, ypos)
+function Avatar:initialize(name, controller)
+	Entity.initialize(self, name)
 	self.controller = controller
 	self.hp = 50
+	self.x = 0
+	self.y = 0
 end
 
 function Avatar:draw()

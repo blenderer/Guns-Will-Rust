@@ -7,11 +7,11 @@ function love.load()
 
 	test_map = Map:new("Test")
 	
-	enemy1 = Entity:new("Bad Guy", 200, 200)
+	enemy1 = Entity:new("Bad Guy")
 	
 	players = {}
 	
-	table.insert(players, Avatar:new("Blenderer", 0, 0, 1))
+	table.insert(players, Avatar:new("Blenderer", 1))
 	
 	test_map:spawn(enemy1, 200, 200)
 	
