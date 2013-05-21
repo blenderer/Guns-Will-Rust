@@ -1,9 +1,6 @@
 Entity = class('Entity')
 
 function Entity:initialize(name)
-	
-	self.x = 0
-	self.y = 0
 	self.hp = 1
 	
 	self.name = name

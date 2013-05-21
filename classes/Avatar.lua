@@ -4,8 +4,6 @@ function Avatar:initialize(name, controller)
 	Entity.initialize(self, name)
 	self.controller = controller
 	self.hp = 50
-	self.x = 0
-	self.y = 0
 end
 
 function Avatar:draw()
