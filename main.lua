@@ -2,15 +2,17 @@ require 'libraries/libraries'
 require 'classes/classes'
 
 function love.load()
+	font = love.graphics.newFont(13)
+	love.graphics.setFont(font)
 
-	--cam = Camera(0, 0)
+	cam = Camera(0, 0)
 
 	test_map = Map:new("test")
 
 	
 	players = {}
 	
-	table.insert(players, Avatar:new("Blenderer", 400, 300, 1))
+	table.insert(players, Avatar:new("Blenderer", 0, 0, 1))
 	
 	test_map:spawn(players[1])
 	
@@ -27,13 +29,16 @@ end
 
 
 function love.draw()
-	test_map:draw()
-	--[[
+	
+	
 	cam:attach()
 	--draw world
+	test_map:draw()
+
 	cam:detach()
 	--draw UI
-	]]--
+	love.graphics.print(love.mouse.getX() .. ', ' .. love.mouse.getY(), 0, 580)
+	
 end
 
 function love.keypressed(key, u)

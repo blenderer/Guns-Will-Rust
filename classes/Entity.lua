@@ -58,5 +58,10 @@ function Entity:draw()
 	love.graphics.setColor(255, 0, 0)
 	love.graphics.circle("fill", self.x, self.y, 10)
 	love.graphics.setColor(255, 255, 255)
-	love.graphics.print(self.name, self.x - 30, self.y - 5)
+
+	f = love.graphics.getFont()
+
+	name_size = f:getWidth(self.name)
+
+	love.graphics.print(self.name, self.x - name_size / 2, self.y + 10)
 end

@@ -1,3 +1,3 @@
-Entity:Ghost1,500,500;
-Entity:Ghost2,300,50;
-Entity:Ghost3,100,400;
+Entity:Ghost1,-300,-200;
+Entity:Ghost2,-50,50;
+Entity:Ghost3,300,-100;

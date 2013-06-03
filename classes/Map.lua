@@ -35,8 +35,9 @@ function Map:readMap()
 
 		--match each parameters and insert it into an array
 		params = {}
-		for parameter in string.gmatch(line, '([%a%d_]+)[,;]') do 
+		for parameter in string.gmatch(line, '([%a%d_+-]+)[,;]') do 
 			table.insert(params, parameter) 
+			print(parameter)
 		end
 
 		--this line is crazy. spawn an entity by making a new class object by the class_name we grabbed
