@@ -3,12 +3,18 @@ Map = class('Map')
 function Map:initialize(datafile)
 	self.datafile = "maps/" .. datafile .. ".map"
 	self.entities = {}
+	self.rooms = {}
+
 
 	self:readMap()
 end
 
-function Map:spawn(entity)
-	table.insert(self.entities, entity)
+function Map:spawn(add)
+	table.insert(self.entities, add)
+end
+
+function Map:scaffold(add)
+	table.insert(self.rooms, add)
 end
 
 function Map:draw()
@@ -37,11 +43,15 @@ function Map:readMap()
 		params = {}
 		for parameter in string.gmatch(line, '([%a%d_+-]+)[,;]') do 
 			table.insert(params, parameter) 
-			print(parameter)
 		end
 
-		--this line is crazy. spawn an entity by making a new class object by the class_name we grabbed
+		--spawn an entity by making a new class object by the class_name we grabbed
 		--and unpack the array of params and insert into its constructor
-  		self:spawn(_G[class_name]:new(unpack(params)))
+
+		if _G[class_name].name == "Entity" or subclassOf(_G[class_name], Entity) then
+  			self:spawn(_G[class_name]:new(unpack(params)))
+  		elseif _G[class_name].name == "Room" or subclassOf(_G[class_name], Room) then
+  			self:scaffold(_G[class_name]:new(unpack(params)))
+  		end
 	end
 end

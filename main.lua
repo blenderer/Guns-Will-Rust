@@ -41,6 +41,10 @@ function love.draw()
 	
 end
 
+--[[
+	Keyboard Stuff Below
+]]--
+
 function love.keypressed(key, u)
 	--Debug
 	if (key == "rctrl") then

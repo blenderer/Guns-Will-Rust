@@ -8,6 +8,8 @@ function Entity:initialize(name, xpos, ypos)
 	self.x = xpos or 0
 
 	self.y = ypos or 0
+
+	self.height, self.width = 10, 10
 	
 end
 
@@ -29,6 +31,10 @@ end
 
 function Entity:kill()
 	self.hp = 0
+end
+
+function Entity:setHp(to_what)
+	self.hp = to_what
 end
 
 function Entity:move(xpos, ypos)
@@ -56,12 +62,12 @@ end
 
 function Entity:draw()
 	love.graphics.setColor(255, 0, 0)
-	love.graphics.circle("fill", self.x, self.y, 10)
+	love.graphics.circle("fill", self.x, self.y, self.height)
 	love.graphics.setColor(255, 255, 255)
 
 	f = love.graphics.getFont()
 
 	name_size = f:getWidth(self.name)
 
-	love.graphics.print(self.name, self.x - name_size / 2, self.y + 10)
+	love.graphics.print(self.name, self.x - name_size / 2, self.y + self.height)
 end
