@@ -1,13 +1,13 @@
 Entity = class('Entity')
 
-function Entity:initialize(name)
+function Entity:initialize(name, xpos, ypos)
 	self.hp = 1
 	
 	self.name = name
 
-	self.x = 0
+	self.x = xpos or 0
 
-	self.y = 0
+	self.y = ypos or 0
 	
 end
 

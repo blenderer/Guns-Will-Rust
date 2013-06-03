@@ -1,7 +1,7 @@
 Avatar = class('Avatar', Entity)
 
-function Avatar:initialize(name, controller)
-	Entity.initialize(self, name)
+function Avatar:initialize(name, xpos, ypos, controller)
+	Entity.initialize(self, name, xpos, ypos)
 	self.controller = controller
 	self.hp = 50
 end

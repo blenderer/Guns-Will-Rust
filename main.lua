@@ -5,26 +5,21 @@ function love.load()
 
 	--cam = Camera(0, 0)
 
-	test_map = Map:new("Test")
-	
-	enemy1 = Entity:new("Bad Guy")
+	test_map = Map:new("test")
+
 	
 	players = {}
 	
-	table.insert(players, Avatar:new("Blenderer", 1))
+	table.insert(players, Avatar:new("Blenderer", 400, 300, 1))
 	
-	test_map:spawn(enemy1, 200, 200)
-	
-	test_map:spawn(players[1], 400, 300)
-
-	players[1]:move("up")
+	test_map:spawn(players[1])
 	
 end
 
 function love.update(deltatime)
 
 	if love.joystick.getHat( 1, 1 ) ~= "c" then
-		print(love.joystick.getHat( 1, 1 ))
+		--print(love.joystick.getHat( 1, 1 ))
 	end
 
 	keydowns()
