@@ -31,6 +31,10 @@ function Entity:kill()
 	self.hp = 0
 end
 
+function Entity:setHp(to_what)
+	self.hp = to_what
+end
+
 function Entity:move(xpos, ypos)
 	--If xpos is a number, move to xy position
 	if tonumber(xpos) then
