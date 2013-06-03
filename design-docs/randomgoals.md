@@ -1,1 +1,1 @@
-- [ ] Design a boss like a WoW encounter.
+- [ ] Design a level-boss like a WoW encounter.
