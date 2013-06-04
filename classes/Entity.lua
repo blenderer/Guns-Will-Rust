@@ -10,6 +10,8 @@ function Entity:initialize(name, xpos, ypos)
 	self.y = ypos or 0
 
 	self.height, self.width = 10, 10
+
+	self.bounds = BoundingBox:new(self, 20, 20, -10, -10)
 	
 end
 
@@ -37,6 +39,10 @@ function Entity:setHp(to_what)
 	self.hp = to_what
 end
 
+function Entity:update()
+	self.bounds:update()
+end
+
 function Entity:move(xpos, ypos)
 	--If xpos is a number, move to xy position
 	if tonumber(xpos) then
@@ -61,6 +67,8 @@ end
 
 
 function Entity:draw()
+	self.bounds:draw()
+
 	love.graphics.setColor(255, 0, 0)
 	love.graphics.circle("fill", self.x, self.y, self.height)
 	love.graphics.setColor(255, 255, 255)

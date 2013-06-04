@@ -25,6 +25,8 @@ function love.update(deltatime)
 	end
 
 	keydowns()
+
+	test_map:update()
 end
 
 

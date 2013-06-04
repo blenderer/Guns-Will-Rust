@@ -9,6 +9,12 @@ function Map:initialize(datafile)
 	self:readMap()
 end
 
+function Map:update()
+	for i,entity in ipairs(self.entities) do
+		entity:update()
+	end
+end
+
 function Map:spawn(add)
 	table.insert(self.entities, add)
 end
@@ -19,6 +25,9 @@ end
 
 function Map:draw()
 	--draw terrain/rooms
+	for i,room in ipairs(self.rooms) do
+		room:draw()
+	end
 	
 	--draw entities
 	for i,entity in ipairs(self.entities) do

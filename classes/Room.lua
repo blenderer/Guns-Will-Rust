@@ -6,3 +6,7 @@ function Room:initialize(xpos, ypos, width, height)
 	self.w = width
 	self.h = height
 end
+
+function Room:draw()
+	love.graphics.rectangle('line', self.x, self.y, self.w, self.h)
+end

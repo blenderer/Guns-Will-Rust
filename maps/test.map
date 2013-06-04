@@ -1,3 +1,4 @@
 Entity:Ghost1,-300,-200;
 Entity:Ghost2,-50,50;
 Entity:Ghost3,300,-100;
+Room:-200,-200,400,400;
