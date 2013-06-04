@@ -19,6 +19,15 @@ function Entity:getName()
 	return self.name
 end
 
+function Entity:getRoom(rooms)
+	for i,room in ipairs(rooms) do
+		x, y, w, h = room:getBounds()
+		if self.x > x and self.y > y and self.x < x + w and self.y < y + h then
+			
+		end
+	end
+end
+
 function Entity:getX()
 	return self.x
 end
@@ -54,13 +63,13 @@ function Entity:move(xpos, ypos)
 
 		--Relative Moves
 		if (direction == "up") then
-			self:move(self.x, self.y - 1)
+			self:move(self.x, self.y - .6)
 		elseif (direction == "down") then
-			self:move(self.x, self.y + 1)
+			self:move(self.x, self.y + .6)
 		elseif (direction == "left") then
-			self:move(self.x - 1, self.y)
+			self:move(self.x - .6, self.y)
 		elseif (direction == "right") then
-			self:move(self.x + 1, self.y)
+			self:move(self.x + .6, self.y)
 		end
 	end
 end

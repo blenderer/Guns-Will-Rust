@@ -7,6 +7,10 @@ function Room:initialize(xpos, ypos, width, height)
 	self.h = height
 end
 
+function Room:getBounds()
+	return self.x, self.y, self.w, self.h
+end
+
 function Room:draw()
 	love.graphics.rectangle('line', self.x, self.y, self.w, self.h)
 end

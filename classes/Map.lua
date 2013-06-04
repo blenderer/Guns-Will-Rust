@@ -15,6 +15,12 @@ function Map:update()
 	end
 end
 
+function Map:checkCollisions()
+	for i,room in ipairs(self.rooms) do
+		
+	end
+end
+
 function Map:spawn(add)
 	table.insert(self.entities, add)
 end
