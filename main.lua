@@ -15,6 +15,12 @@ function love.load()
 	table.insert(players, Avatar:new("Blenderer", 0, 0, 1))
 	
 	test_map:spawn(players[1])
+
+	--for debugging purposes:
+	imp = test_map.entities[1]
+	imp2 = test_map.entities[2]
+	imp3 = test_map.entities[3]
+	den = test_map.rooms[1]
 	
 end
 

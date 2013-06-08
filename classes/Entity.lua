@@ -5,9 +5,9 @@ function Entity:initialize(name, xpos, ypos)
 	
 	self.name = name
 
-	self.x = xpos or 0
+	self.x = xpos + 0 or 0
 
-	self.y = ypos or 0
+	self.y = ypos + 0 or 0
 
 	self.height, self.width = 10, 10
 
@@ -34,6 +34,10 @@ end
 
 function Entity:getY()
 	return self.y
+end
+
+function Entity:getXY()
+	return {self.x, self.y, x = self.x, y = self.y}
 end
 
 function Entity:getHp()
