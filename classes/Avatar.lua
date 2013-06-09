@@ -7,6 +7,8 @@ function Avatar:initialize(name, xpos, ypos, controller)
 
 	self.height, self.width = 20, 20
 	self.bounds = BoundingBox:new(self, 40, 40, -20, -20)
+
+	self.speed = 1
 end
 
 function Avatar:draw()

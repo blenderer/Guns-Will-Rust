@@ -15,11 +15,12 @@ function Room:draw()
 	love.graphics.rectangle('line', self.x, self.y, self.w, self.h)
 end
 
-function Room:contains(entity)
-	if entity:getX() >= self.x and 
-	entity:getX() <= self.x + self.w and
-	entity:getY() >= self.y and 
-	entity:getY() <= self.y + self.h then
+function Room:contains(x, y)
+
+	if x >= self.x and 
+	x <= self.x + self.w and
+	y >= self.y and 
+	y <= self.y + self.h then
 		return true
 	else
 		return false

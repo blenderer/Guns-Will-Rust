@@ -9,19 +9,26 @@ function Map:initialize(datafile)
 	self:readMap()
 end
 
+function Map:checkCollision(x, y)
+	is_colliding = true
+
+	for i,room in ipairs(self.rooms) do
+		if room:contains(x, y) then
+			is_colliding = false
+		end
+	end
+
+	return is_colliding
+end
+
 function Map:update()
 	for i,entity in ipairs(self.entities) do
 		entity:update()
 	end
 end
 
-function Map:checkCollisions()
-	for i,room in ipairs(self.rooms) do
-		
-	end
-end
-
 function Map:spawn(add)
+	add:setMap(self)
 	table.insert(self.entities, add)
 end
 

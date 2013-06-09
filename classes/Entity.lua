@@ -12,6 +12,10 @@ function Entity:initialize(name, xpos, ypos)
 	self.height, self.width = 10, 10
 
 	self.bounds = BoundingBox:new(self, 20, 20, -10, -10)
+
+	self.map = nil
+
+	self.speed = .6
 	
 end
 
@@ -26,6 +30,14 @@ function Entity:getRoom(rooms)
 			
 		end
 	end
+end
+
+function Entity:setMap(map)
+	self.map = map
+end
+
+function Entity:getMap()
+	return self.map
 end
 
 function Entity:getX()
@@ -59,21 +71,31 @@ end
 function Entity:move(xpos, ypos)
 	--If xpos is a number, move to xy position
 	if tonumber(xpos) then
-		self.x = xpos
-		self.y = ypos
+		if not self.map:checkCollision(xpos, ypos) then
+			self.x = xpos
+			self.y = ypos
+		end
 	--if xpos is not nil, then it's a string, now we can move relatively
 	elseif (xpos ~= nil) then
 		direction = xpos --change the variable name so code looks sexier
 
 		--Relative Moves
 		if (direction == "up") then
-			self:move(self.x, self.y - .6)
+			if not self.map:checkCollision(self.x, self.y - self.speed) then
+				self:move(self.x, self.y - self.speed)
+			end
 		elseif (direction == "down") then
-			self:move(self.x, self.y + .6)
+			if not self.map:checkCollision(self.x, self.y + self.speed) then
+				self:move(self.x, self.y + self.speed)
+			end
 		elseif (direction == "left") then
-			self:move(self.x - .6, self.y)
+			if not self.map:checkCollision(self.x - self.speed, self.y) then
+				self:move(self.x - self.speed, self.y)
+			end
 		elseif (direction == "right") then
-			self:move(self.x + .6, self.y)
+			if not self.map:checkCollision(self.x + self.speed, self.y) then
+				self:move(self.x + self.speed, self.y)
+			end
 		end
 	end
 end
